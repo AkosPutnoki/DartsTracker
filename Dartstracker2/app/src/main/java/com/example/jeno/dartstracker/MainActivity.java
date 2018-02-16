@@ -13,6 +13,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static final int startingScore = 501;
+    private static final int scoreBoardLength = 5;
     private static List<Integer> scoreBoardList = new ArrayList<>();
 
     @Override
@@ -63,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
     // makes sure we only show only the last 5 scores
     public void buildScoreBoard(TextView scoreBoard, List<Integer> scores){
         clearScoreBoard(scoreBoard);
-        if (scores.size() < 6){
+        if (scores.size() < scoreBoardLength){
             for (Integer score: scores){
                 scoreBoard.append(String.valueOf(score) + "\n");
             }
         } else {
-            for (int i = scores.size() - 5; i < scores.size(); i++){
+            for (int i = scores.size() - scoreBoardLength; i < scores.size(); i++){
                 scoreBoard.append(String.valueOf(scores.get(i)) + "\n");
             }
         }
