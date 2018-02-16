@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         int result = originalScore - inputScore;
         if (result == 0){
             scoreTextView.setText(String.valueOf(startingScore));
-        } else if (result > 0){
+        } else if (result > 1){
             scoreTextView.setText(String.valueOf(result));
         }
     }
