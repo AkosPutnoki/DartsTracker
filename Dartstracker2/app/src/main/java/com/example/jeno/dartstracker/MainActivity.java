@@ -25,21 +25,35 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 TextView number1 = (TextView)findViewById(R.id.number1);
                 EditText input1 = (EditText)findViewById(R.id.input1);
+                TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard);
                 int originalNumber = Integer.parseInt(number1.getText().toString());
                 int inputNumber = Integer.parseInt(input1.getText().toString());
 
-                scoreHandler(number1, originalNumber, inputNumber);
+                scoreHandler(number1, scoreBoard1, originalNumber, inputNumber);
+                input1.setText("");
             }
         });
 
     }
 
-    public void scoreHandler(TextView scoreTextView, int originalScore, int inputScore){
+    // handles score calculations and
+    // sets text field values accordingly
+    public void scoreHandler(TextView scoreTextView, TextView scoreBoard, int originalScore, int inputScore){
         int result = originalScore - inputScore;
         if (result == 0){
             scoreTextView.setText(String.valueOf(startingScore));
+            clearScoreBoard(scoreBoard);
         } else if (result > 1){
             scoreTextView.setText(String.valueOf(result));
+            scoreBoardUpdate(scoreBoard, inputScore);
         }
+    }
+
+    public void scoreBoardUpdate(TextView scoreBoard, int newScore){
+        scoreBoard.append(String.valueOf(newScore) + "\n");
+    }
+
+    public void clearScoreBoard(TextView scoreBoard){
+        scoreBoard.setText("");
     }
 }
