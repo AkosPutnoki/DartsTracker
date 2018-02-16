@@ -7,9 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int startingScore = 501;
+    private static List<Integer> scoreBoardList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +46,32 @@ public class MainActivity extends AppCompatActivity {
         int result = originalScore - inputScore;
         if (result == 0){
             scoreTextView.setText(String.valueOf(startingScore));
-            clearScoreBoard(scoreBoard);
+            scoreBoardList.clear();
         } else if (result > 1){
             scoreTextView.setText(String.valueOf(result));
-            scoreBoardUpdate(scoreBoard, inputScore);
+            scoreBoardList.add(inputScore);
         }
+        buildScoreBoard(scoreBoard, scoreBoardList);
     }
 
-    public void scoreBoardUpdate(TextView scoreBoard, int newScore){
-        scoreBoard.append(String.valueOf(newScore) + "\n");
-    }
-
+    // clears scoreboard view
     public void clearScoreBoard(TextView scoreBoard){
         scoreBoard.setText("");
     }
+
+    // builds up scoreboard view based on the current scores
+    // makes sure we only show only the last 5 scores
+    public void buildScoreBoard(TextView scoreBoard, List<Integer> scores){
+        clearScoreBoard(scoreBoard);
+        if (scores.size() < 6){
+            for (Integer score: scores){
+                scoreBoard.append(String.valueOf(score) + "\n");
+            }
+        } else {
+            for (int i = scores.size() - 5; i < scores.size(); i++){
+                scoreBoard.append(String.valueOf(scores.get(i)) + "\n");
+            }
+        }
+    }
+
 }
