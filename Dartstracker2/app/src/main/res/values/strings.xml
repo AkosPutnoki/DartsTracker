@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dartstracker</string>
+    <string name="startingNumber">501</string>
+    <string name="submitButtonText">OK</string>
+</resources>
