@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         if (result == 0){
             scoreTextView.setText(String.valueOf(startingScore));
             scoreBoardList.clear();
-        } else if (result > 1){
+        } else if (result > 1 && inputScore <= 180){
             scoreTextView.setText(String.valueOf(result));
             scoreBoardList.add(inputScore);
         }
