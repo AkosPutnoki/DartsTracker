@@ -10,38 +10,100 @@
         android:id="@+id/number1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_alignBaseline="@+id/number2"
+        android:layout_alignBottom="@+id/number2"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_toLeftOf="@+id/input1"
+        android:layout_toStartOf="@+id/input1"
         android:text="@string/startingNumber"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scoreBoard2"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/input1"
+        android:layout_toRightOf="@+id/input1"
+        android:text="@string/startingNumber"
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/input1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/number1"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/input_style"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/submit1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/input1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:text="@string/submitButtonText" />
 
     <TextView
-        android:id="@+id/scoreBoard"
+        android:id="@+id/scoreBoard1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/number1"
+        android:layout_alignRight="@+id/number1"
         android:layout_below="@+id/submit1"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="71dp"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/scoreBoard2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/scoreBoard1"
+        android:layout_alignBottom="@+id/scoreBoard1"
+        android:layout_alignEnd="@+id/number2"
+        android:layout_alignRight="@+id/number2"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/playername1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/number2"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_toLeftOf="@+id/input1"
+        android:layout_toStartOf="@+id/input1"
+        android:text="Player 1"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/playername2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/playername1"
+        android:layout_alignBottom="@+id/playername1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/input1"
+        android:layout_toRightOf="@+id/input1"
+        android:text="Player 2"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
 </RelativeLayout>

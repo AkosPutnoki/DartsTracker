@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 TextView number1 = (TextView)findViewById(R.id.number1);
                 EditText input1 = (EditText)findViewById(R.id.input1);
-                TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard);
+                TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard1);
                 int originalNumber = Integer.parseInt(number1.getText().toString());
                 int inputNumber = Integer.parseInt(input1.getText().toString());
 
