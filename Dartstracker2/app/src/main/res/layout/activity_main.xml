@@ -10,27 +10,26 @@
         android:id="@+id/number1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/playername1"
-        android:layout_alignStart="@+id/playername1"
-        android:layout_below="@+id/playername1"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_alignBaseline="@+id/scoreSign1"
+        android:layout_alignBottom="@+id/scoreSign1"
+        android:layout_toEndOf="@+id/scoreSign1"
+        android:layout_toRightOf="@+id/scoreSign1"
         android:text="@string/startingNumber"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/number2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/scoreBoard2"
-        android:layout_alignLeft="@+id/playername2"
-        android:layout_alignStart="@+id/playername2"
-        android:layout_marginBottom="14dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
+        android:layout_alignBaseline="@+id/scoreSign2"
+        android:layout_alignBottom="@+id/scoreSign2"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/legsign2"
+        android:layout_toRightOf="@+id/legsign2"
         android:text="@string/startingNumber"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -58,11 +57,11 @@
         android:id="@+id/scoreBoard1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/number1"
-        android:layout_alignRight="@+id/number1"
-        android:layout_below="@+id/submit1"
-        android:layout_marginTop="71dp"
-        android:textAlignment="center"
+        android:layout_alignEnd="@+id/scoreSign1"
+        android:layout_alignRight="@+id/scoreSign1"
+        android:layout_below="@+id/legsign1"
+        android:layout_marginTop="60dp"
+        android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -71,19 +70,18 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/scoreBoard1"
         android:layout_alignBottom="@+id/scoreBoard1"
-        android:layout_alignEnd="@+id/number2"
-        android:layout_alignRight="@+id/number2"
-        android:textAlignment="center"
+        android:layout_alignEnd="@+id/scoreSign2"
+        android:layout_alignRight="@+id/scoreSign2"
+        android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/playername1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/number2"
-        android:layout_marginBottom="13dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
+        android:layout_below="@+id/submit1"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_toLeftOf="@+id/input1"
         android:layout_toStartOf="@+id/input1"
         android:text="Player 1"
@@ -102,6 +100,74 @@
         android:layout_toRightOf="@+id/input1"
         android:text="Player 2"
         android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/legsign1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playername1"
+        android:layout_alignStart="@+id/playername1"
+        android:layout_below="@+id/playername1"
+        android:text="Legs:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/legsign2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playername2"
+        android:layout_alignStart="@+id/playername2"
+        android:layout_below="@+id/playername2"
+        android:text="Legs:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/legnumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/legsign1"
+        android:layout_alignEnd="@+id/playername1"
+        android:layout_alignRight="@+id/playername1"
+        android:layout_toEndOf="@+id/legsign1"
+        android:layout_toRightOf="@+id/legsign1"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/legnumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/legsign2"
+        android:layout_alignBottom="@+id/legsign2"
+        android:layout_alignEnd="@+id/playername2"
+        android:layout_alignRight="@+id/playername2"
+        android:layout_toEndOf="@+id/legsign2"
+        android:layout_toRightOf="@+id/legsign2"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/scoreSign1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/legsign1"
+        android:layout_alignStart="@+id/legsign1"
+        android:layout_below="@+id/legsign1"
+        android:text="Score:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/scoreSign2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/number1"
+        android:layout_alignBottom="@+id/number1"
+        android:layout_alignLeft="@+id/legsign2"
+        android:layout_alignStart="@+id/legsign2"
+        android:text="Score:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 

@@ -25,13 +25,17 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreBoard2 = (TextView)findViewById(R.id.scoreBoard2);
         TextView number1 = (TextView)findViewById(R.id.number1);
         TextView number2 = (TextView)findViewById(R.id.number2);
+        TextView legCounter1 = (TextView)findViewById(R.id.legnumber1);
+        TextView legCounter2 = (TextView)findViewById(R.id.legnumber2);
         EditText input1 = (EditText)findViewById(R.id.input1);
+
 
 
         // and building objects based on them
         final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
-        final ScoreHandler scoreHandler = new ScoreHandler(scoreBoardFirst, scoreBoardSecond, number1, number2, input1);
+        final ScoreHandler scoreHandler = new ScoreHandler(scoreBoardFirst, scoreBoardSecond, number1,
+                number2, input1, legCounter1, legCounter2);
 
         //OK button event listener
         button1.setOnClickListener(new Button.OnClickListener() {
