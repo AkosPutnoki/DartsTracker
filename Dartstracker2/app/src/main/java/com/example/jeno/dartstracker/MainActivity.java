@@ -51,19 +51,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-//    // handles score calculations and
-//    // sets text field values accordingly
-//    public void scoreHandler(TextView scoreTextView, ScoreBoard scoreBoard, int originalScore, int inputScore){
-//        int result = originalScore - inputScore;
-//        if (result == 0){
-//            scoreTextView.setText(String.valueOf(startingScore));
-//            scoreBoard.clearScores();
-//        } else if (result > 1 && inputScore <= maxScore){
-//            scoreTextView.setText(String.valueOf(result));
-//            scoreBoard.addToScores(inputScore);
-//        }
-//        scoreBoard.buildScoreBoard();
-//    }
-
 }
