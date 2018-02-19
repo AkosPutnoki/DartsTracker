@@ -46,9 +46,6 @@ public class ScoreBoard {
 
     public void buildScoreBoard(){
         this.clearScoreBoard();
-        List<Integer> scores = this.getScores();
-        TextView scoreBoard = this.getScoreBoard();
-        Integer length = this.getLength();
         if (scores.size() < length){
             for (Integer score: scores){
                 scoreBoard.append(String.valueOf(score) + "\n");
