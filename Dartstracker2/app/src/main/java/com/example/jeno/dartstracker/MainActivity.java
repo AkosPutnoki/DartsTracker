@@ -7,19 +7,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
+/**
+ * MainActivity is responsible for creating our layout,
+ * instantiating the necessary classes handling the game logic
+ * and adding the clickEventListener to our button.
+ */
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final int startingScore = 501;
-    private static final int maxScore = 180;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // getting the view elements
         Button button1 = (Button)findViewById(R.id.submit1);
         TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard1);
         TextView scoreBoard2 = (TextView)findViewById(R.id.scoreBoard2);
@@ -29,15 +29,11 @@ public class MainActivity extends AppCompatActivity {
         TextView legCounter2 = (TextView)findViewById(R.id.legnumber2);
         EditText input1 = (EditText)findViewById(R.id.input1);
 
-
-
-        // and building objects based on them
         final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
         final ScoreHandler scoreHandler = new ScoreHandler(scoreBoardFirst, scoreBoardSecond, number1,
                 number2, input1, legCounter1, legCounter2);
 
-        //OK button event listener
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
