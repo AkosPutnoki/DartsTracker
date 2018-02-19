@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int startingScore = 501;
@@ -19,39 +20,50 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // getting the view elements
-
         Button button1 = (Button)findViewById(R.id.submit1);
         TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard1);
-        final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
+        TextView scoreBoard2 = (TextView)findViewById(R.id.scoreBoard2);
+        TextView number1 = (TextView)findViewById(R.id.number1);
+        TextView number2 = (TextView)findViewById(R.id.number2);
+        EditText input1 = (EditText)findViewById(R.id.input1);
 
+
+        // and building objects based on them
+        final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
+        final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
+        final ScoreHandler scoreHandler = new ScoreHandler(scoreBoardFirst, scoreBoardSecond, number1, number2, input1);
+
+        //OK button event listener
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView number1 = (TextView)findViewById(R.id.number1);
-                EditText input1 = (EditText)findViewById(R.id.input1);
-                TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard1);
-                int originalNumber = Integer.parseInt(number1.getText().toString());
-                int inputNumber = Integer.parseInt(input1.getText().toString());
+            TextView number1 = (TextView)findViewById(R.id.number1);
+            TextView number2 = (TextView)findViewById(R.id.number2);
+            EditText input1 = (EditText)findViewById(R.id.input1);
 
-                scoreHandler(number1, scoreBoardFirst, originalNumber, inputNumber);
-                input1.setText("");
+            int originalScore1 = Integer.parseInt(number1.getText().toString());
+            int originalScore2 = Integer.parseInt(number2.getText().toString());
+            int input = Integer.parseInt(input1.getText().toString());
+
+            scoreHandler.handle(originalScore1, originalScore2, input);
+            input1.setText("");
             }
         });
 
     }
 
-    // handles score calculations and
-    // sets text field values accordingly
-    public void scoreHandler(TextView scoreTextView, ScoreBoard scoreBoard, int originalScore, int inputScore){
-        int result = originalScore - inputScore;
-        if (result == 0){
-            scoreTextView.setText(String.valueOf(startingScore));
-            scoreBoard.clearScores();
-        } else if (result > 1 && inputScore <= maxScore){
-            scoreTextView.setText(String.valueOf(result));
-            scoreBoard.addToScores(inputScore);
-        }
-        scoreBoard.buildScoreBoard();
-    }
+//    // handles score calculations and
+//    // sets text field values accordingly
+//    public void scoreHandler(TextView scoreTextView, ScoreBoard scoreBoard, int originalScore, int inputScore){
+//        int result = originalScore - inputScore;
+//        if (result == 0){
+//            scoreTextView.setText(String.valueOf(startingScore));
+//            scoreBoard.clearScores();
+//        } else if (result > 1 && inputScore <= maxScore){
+//            scoreTextView.setText(String.valueOf(result));
+//            scoreBoard.addToScores(inputScore);
+//        }
+//        scoreBoard.buildScoreBoard();
+//    }
 
 }
