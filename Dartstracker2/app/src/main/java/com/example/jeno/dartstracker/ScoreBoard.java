@@ -22,8 +22,7 @@ public class ScoreBoard {
 
     /**
      * Constructor for class ScoreBoard.
-     * Sets scores as a new ArrayList.
-     * */
+     */
     public ScoreBoard(TextView scoreBoard) {
         this.scoreBoard = scoreBoard;
         scores = new ArrayList<>();
@@ -31,14 +30,14 @@ public class ScoreBoard {
 
     /**
      * addToScores() method for adding elements to our ScoreBoard objects scores list
-     * */
+     */
     public void addToScores(int addable){
         scores.add(addable);
     }
 
     /**
      * Cleares the scores list. Called whenever a leg is over.
-     * */
+     */
     public void clearScores(){
         scores.clear();
     }
@@ -46,7 +45,7 @@ public class ScoreBoard {
 
     /**
      * Clears the scoreBoard TextView object. Called whenever a leg is over.
-     * */
+     */
     public void clearScoreBoard(){
         this.scoreBoard.setText("");
     }
@@ -54,7 +53,7 @@ public class ScoreBoard {
     /**
      * Responsible for rebuilding the scoreBoard TextView object at every change to the scoreBoard.
      * Also makes sure we only show the last *length* amount of scores.
-     * */
+     */
     public void buildScoreBoard(){
         this.clearScoreBoard();
         if (scores.size() < length){

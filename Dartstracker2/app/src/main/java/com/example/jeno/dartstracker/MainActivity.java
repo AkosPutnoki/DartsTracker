@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button1 = (Button)findViewById(R.id.submit1);
-        TextView scoreBoard1 = (TextView)findViewById(R.id.scoreBoard1);
-        TextView scoreBoard2 = (TextView)findViewById(R.id.scoreBoard2);
-        TextView number1 = (TextView)findViewById(R.id.number1);
-        TextView number2 = (TextView)findViewById(R.id.number2);
-        TextView legCounter1 = (TextView)findViewById(R.id.legnumber1);
-        TextView legCounter2 = (TextView)findViewById(R.id.legnumber2);
-        EditText input1 = (EditText)findViewById(R.id.input1);
+        Button button1 = findViewById(R.id.submit1);
+        TextView scoreBoard1 = findViewById(R.id.scoreBoard1);
+        TextView scoreBoard2 = findViewById(R.id.scoreBoard2);
+        TextView number1 = findViewById(R.id.number1);
+        TextView number2 = findViewById(R.id.number2);
+        TextView legCounter1 = findViewById(R.id.legnumber1);
+        TextView legCounter2 = findViewById(R.id.legnumber2);
+        EditText input1 = findViewById(R.id.input1);
 
         final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-            TextView number1 = (TextView)findViewById(R.id.number1);
-            TextView number2 = (TextView)findViewById(R.id.number2);
-            EditText input1 = (EditText)findViewById(R.id.input1);
+            TextView number1 = findViewById(R.id.number1);
+            TextView number2 = findViewById(R.id.number2);
+            EditText input1 = findViewById(R.id.input1);
 
             int originalScore1 = Integer.parseInt(number1.getText().toString());
             int originalScore2 = Integer.parseInt(number2.getText().toString());
