@@ -27,12 +27,11 @@ public class MainActivity extends AppCompatActivity {
         TextView number2 = findViewById(R.id.number2);
         TextView legCounter1 = findViewById(R.id.legnumber1);
         TextView legCounter2 = findViewById(R.id.legnumber2);
-        EditText input1 = findViewById(R.id.input1);
 
         final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
         final ScoreHandler scoreHandler = new ScoreHandler(scoreBoardFirst, scoreBoardSecond, number1,
-                number2, input1, legCounter1, legCounter2);
+                number2, legCounter1, legCounter2);
 
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override

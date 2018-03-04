@@ -4,7 +4,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- * Created by Jeno on 2018. 02. 19..
+ * Created by Jeno on 2018. 02. 19.
  */
 
 public class ScoreHandler {
@@ -16,7 +16,6 @@ public class ScoreHandler {
     private ScoreBoard scoreBoardPlayerTwo;
     private TextView scorePlayerOne;
     private TextView scorePlayerTwo;
-    private EditText input;
     private TextView legCounterPlayerOne;
     private TextView legCounterPlayerTwo;
 
@@ -37,13 +36,12 @@ public class ScoreHandler {
      * Constructor for the ScoreHandler class.
      */
     public ScoreHandler(ScoreBoard scoreBoardPlayerOne, ScoreBoard scoreBoardPlayerTwo, TextView scorePlayerOne,
-                        TextView scorePlayerTwo, EditText input, TextView legCounterPlayerOne,
+                        TextView scorePlayerTwo, TextView legCounterPlayerOne,
                         TextView legCounterPlayerTwo) {
         this.scoreBoardPlayerOne = scoreBoardPlayerOne;
         this.scoreBoardPlayerTwo = scoreBoardPlayerTwo;
         this.scorePlayerOne = scorePlayerOne;
         this.scorePlayerTwo = scorePlayerTwo;
-        this.input = input;
         this.legCounterPlayerOne = legCounterPlayerOne;
         this.legCounterPlayerTwo = legCounterPlayerTwo;
         this.playerRoundSwitch = true;

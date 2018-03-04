@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jeno on 2018. 02. 19..
+ * Created by Jeno on 2018. 02. 19.
  */
 
 public class ScoreBoard {
