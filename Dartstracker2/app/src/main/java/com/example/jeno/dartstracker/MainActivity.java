@@ -7,12 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * MainActivity is responsible for creating our layout,
- * instantiating the necessary classes handling the game logic
- * and adding the clickEventListener to our button.
- */
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -30,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
-        final ScoreHandler scoreHandler = new ScoreHandler(scoreBoardFirst, scoreBoardSecond, number1,
-                number2, legCounter1, legCounter2);
+        final Player player1 = new Player("Józsi", number1, scoreBoardFirst, legCounter1);
+        final Player player2 = new Player("Jenő", number2, scoreBoardSecond, legCounter2);
+        final ScoreHandler scoreHandler = new ScoreHandler(player1, player2);
 
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
