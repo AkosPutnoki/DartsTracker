@@ -4,17 +4,19 @@ public class ScoreHandler {
 
     private Player player1;
     private Player player2;
+    private Switcher switcher;
 
     private final int startingScore = 501;
     private final int maxScore = 180;
 
-    public ScoreHandler(Player player1, Player player2) {
+    public ScoreHandler(Player player1, Player player2, Switcher switcher) {
         this.player1 = player1;
         this.player2 = player2;
+        this.switcher = switcher;
     }
 
     public void handle(int originalScore1, int originalScore2, int inputScore){
-        if (Player.isPlayerSwitch()){
+        if (switcher.isPlayerSwitch()){
             handlePlayer(originalScore1, inputScore, player1);
         } else {
             handlePlayer(originalScore2, inputScore, player2);
@@ -27,12 +29,12 @@ public class ScoreHandler {
         if (result == 0){
             resetScores();
             player.getLegCounter().incrementCounter();
-            Player.legSwitcher();
-            Player.setPlayerSwitch(Player.isLegSwitch());
+            switcher.legSwitcher();
+            switcher.setPlayerSwitch(switcher.isLegSwitch());
         } else if (result > 1 && inputScore <= maxScore ){
             player.setScore(String.valueOf(result));
             player.getScoreBoard().addToScores(inputScore);
-            Player.playerSwitcher();
+            switcher.playerSwitcher();
         }
         player.getScoreBoard().buildScoreBoard();
     }

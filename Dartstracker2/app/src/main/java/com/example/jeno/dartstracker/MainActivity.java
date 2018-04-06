@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
         final Player player1 = new Player("Józsi", number1, scoreBoardFirst, legCounter1);
         final Player player2 = new Player("Jenő", number2, scoreBoardSecond, legCounter2);
-        final ScoreHandler scoreHandler = new ScoreHandler(player1, player2);
+        final Switcher switcher = new Switcher(true, true);
+        final ScoreHandler scoreHandler = new ScoreHandler(player1, player2, switcher);
 
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
