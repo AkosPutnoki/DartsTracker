@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         undoButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                scoreHandler.undo();
             }
         });
 

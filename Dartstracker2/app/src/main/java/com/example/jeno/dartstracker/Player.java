@@ -26,6 +26,14 @@ public class Player {
         scoreBoard.clearScoreBoard();
     }
 
+    public void undo(){
+        int currentScore = Integer.parseInt(score.getText().toString());
+        int lastScore = scoreBoard.getLastScore();
+        setScore(String.valueOf(currentScore + lastScore));
+        scoreBoard.removeLast();
+        scoreBoard.buildScoreBoard();
+    }
+
     // GETTERS AND SETTERS
 
     public String getName() {

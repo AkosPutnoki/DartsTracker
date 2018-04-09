@@ -21,10 +21,17 @@ public class ScoreHandler {
         } else {
             handlePlayer(inputScore, player2);
         }
-
     }
 
-    public void handlePlayer(int inputScore, Player player){
+    public void undo(){
+        if (switcher.isPlayerSwitch()){
+            undoPlayer(player2);
+        } else {
+            undoPlayer(player1);
+        }
+    }
+
+    private void handlePlayer(int inputScore, Player player){
         int result = player.getScore() - inputScore;
         if (result == 0){
             resetScores();
@@ -37,6 +44,11 @@ public class ScoreHandler {
             switcher.playerSwitcher();
         }
         player.getScoreBoard().buildScoreBoard();
+    }
+
+    private void undoPlayer(Player player){
+        player.undo();
+        switcher.playerSwitcher();
     }
 
     public void resetScores(){
