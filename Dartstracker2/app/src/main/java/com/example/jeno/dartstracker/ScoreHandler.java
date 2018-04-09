@@ -15,17 +15,17 @@ public class ScoreHandler {
         this.switcher = switcher;
     }
 
-    public void handle(int originalScore1, int originalScore2, int inputScore){
+    public void handle(int inputScore){
         if (switcher.isPlayerSwitch()){
-            handlePlayer(originalScore1, inputScore, player1);
+            handlePlayer(inputScore, player1);
         } else {
-            handlePlayer(originalScore2, inputScore, player2);
+            handlePlayer(inputScore, player2);
         }
 
     }
 
-    public void handlePlayer(int originalScore, int inputScore, Player player){
-        int result = originalScore - inputScore;
+    public void handlePlayer(int inputScore, Player player){
+        int result = player.getScore() - inputScore;
         if (result == 0){
             resetScores();
             player.getLegCounter().incrementCounter();

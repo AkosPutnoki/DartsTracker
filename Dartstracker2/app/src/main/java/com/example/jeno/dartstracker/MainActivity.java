@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button1 = findViewById(R.id.submit1);
+        Button undoButton = findViewById(R.id.undo);
         TextView scoreBoard1 = findViewById(R.id.scoreBoard1);
         TextView scoreBoard2 = findViewById(R.id.scoreBoard2);
         TextView number1 = findViewById(R.id.number1);
@@ -32,16 +33,18 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-            TextView number1 = findViewById(R.id.number1);
-            TextView number2 = findViewById(R.id.number2);
-            EditText input1 = findViewById(R.id.input1);
+                EditText input1 = findViewById(R.id.input1);
+                int input = Integer.parseInt(input1.getText().toString());
 
-            int originalScore1 = Integer.parseInt(number1.getText().toString());
-            int originalScore2 = Integer.parseInt(number2.getText().toString());
-            int input = Integer.parseInt(input1.getText().toString());
+                scoreHandler.handle(input);
+                input1.setText("");
+            }
+        });
 
-            scoreHandler.handle(originalScore1, originalScore2, input);
-            input1.setText("");
+        undoButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
             }
         });
 

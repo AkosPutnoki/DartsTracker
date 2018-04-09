@@ -170,5 +170,14 @@
         android:text="Score:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        android:id="@+id/undo"
+        android:layout_width="72dp"
+        android:layout_height="37dp"
+        android:layout_alignLeft="@+id/playername2"
+        android:layout_alignStart="@+id/playername2"
+        android:layout_alignTop="@+id/input1"
+        android:text="Undo" />
+
 
 </RelativeLayout>

@@ -32,6 +32,10 @@ public class Player {
         return name;
     }
 
+    public int getScore() {
+        return Integer.parseInt(score.getText().toString());
+    }
+
     public void setName(String name) {
         this.name = name;
     }
