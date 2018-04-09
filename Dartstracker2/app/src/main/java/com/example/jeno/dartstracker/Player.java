@@ -26,12 +26,16 @@ public class Player {
         scoreBoard.clearScoreBoard();
     }
 
-    public void undo(){
-        int currentScore = Integer.parseInt(score.getText().toString());
-        int lastScore = scoreBoard.getLastScore();
-        setScore(String.valueOf(currentScore + lastScore));
-        scoreBoard.removeLast();
-        scoreBoard.buildScoreBoard();
+    public boolean undo(){
+        if (scoreBoard.getScoresSize() > 0){
+            int currentScore = Integer.parseInt(score.getText().toString());
+            int lastScore = scoreBoard.getLastScore();
+            setScore(String.valueOf(currentScore + lastScore));
+            scoreBoard.removeLast();
+            scoreBoard.buildScoreBoard();
+            return true;
+        }
+        return false;
     }
 
     // GETTERS AND SETTERS

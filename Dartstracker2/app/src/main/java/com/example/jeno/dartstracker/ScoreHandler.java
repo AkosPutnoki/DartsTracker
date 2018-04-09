@@ -47,8 +47,8 @@ public class ScoreHandler {
     }
 
     private void undoPlayer(Player player){
-        player.undo();
-        switcher.playerSwitcher();
+        boolean success = player.undo();
+        if (success) switcher.playerSwitcher();
     }
 
     public void resetScores(){

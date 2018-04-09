@@ -20,6 +20,10 @@ public class ScoreBoard {
         scores.add(addable);
     }
 
+    public int getScoresSize(){
+        return scores.size();
+    }
+
     public int getLastScore(){
         return scores.get(scores.size() - 1);
     }
