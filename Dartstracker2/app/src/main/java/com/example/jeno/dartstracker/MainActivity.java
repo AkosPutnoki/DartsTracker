@@ -56,9 +56,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText input1 = findViewById(R.id.input1);
-                int input = Integer.parseInt(input1.getText().toString());
+                try {
+                    int input = Integer.parseInt(input1.getText().toString());
+                    scoreHandler.handle(input);
+                } catch (NumberFormatException e){
+                    System.out.println("wrong input");
+                }
 
-                scoreHandler.handle(input);
                 input1.setText("");
             }
         });
