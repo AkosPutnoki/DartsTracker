@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class StartActivity extends Activity {
 
@@ -18,6 +20,7 @@ public class StartActivity extends Activity {
         final EditText playerName1 = findViewById(R.id.nameInput1);
         final EditText playerName2 = findViewById(R.id.nameInput2);
         Button newGame = findViewById(R.id.newgame);
+        final RadioGroup radioGroup = findViewById(R.id.scoreGroup);
 
         newGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +29,11 @@ public class StartActivity extends Activity {
 
                 nextScreen.putExtra("playerName1", playerName1.getText().toString());
                 nextScreen.putExtra("playerName2", playerName2.getText().toString());
+
+                //getting selected radio button
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = findViewById(selectedId);
+                nextScreen.putExtra("clicked", radioButton.getText());
 
                 startActivity(nextScreen);
             }

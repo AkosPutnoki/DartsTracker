@@ -6,7 +6,7 @@ public class ScoreHandler {
     private Player player2;
     private Switcher switcher;
 
-    private final int startingScore = 501;
+    private int startingScore = 501;
     private final int maxScore = 180;
 
     public ScoreHandler(Player player1, Player player2, Switcher switcher) {
@@ -56,4 +56,7 @@ public class ScoreHandler {
         player2.reset(startingScore);
     }
 
+    public void setStartingScore(int startingScore) {
+        this.startingScore = startingScore;
+    }
 }

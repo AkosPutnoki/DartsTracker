@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         // Receiving the Data
         String playerName1 = i.getStringExtra("playerName1");
         String playerName2 = i.getStringExtra("playerName2");
+        String startingScore = i.getStringExtra("clicked");
 
         // creating objects from elements
         final ScoreBoard scoreBoardFirst = new ScoreBoard(scoreBoard1);
@@ -37,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         final Player player2 = new Player(playerName2, number2, scoreBoardSecond, legCounter2);
         final Switcher switcher = new Switcher(true, true);
         final ScoreHandler scoreHandler = new ScoreHandler(player1, player2, switcher);
+
+        // setting starting score
+        scoreHandler.setStartingScore(Integer.parseInt(startingScore));
+        number1.setText(startingScore);
+        number2.setText(startingScore);
+
 
         // setting names for players
         TextView nameField1 = findViewById(R.id.playername1);
