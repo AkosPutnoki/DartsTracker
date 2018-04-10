@@ -41,7 +41,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/input_style"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:singleLine="false"
         android:textAlignment="center" />
 
