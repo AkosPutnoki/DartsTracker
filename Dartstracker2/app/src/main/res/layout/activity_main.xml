@@ -38,7 +38,7 @@
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/input_style"
         android:ems="10"
         android:inputType="textPersonName"
@@ -79,11 +79,9 @@
         android:id="@+id/playername1"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/submit1"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_toLeftOf="@+id/input1"
-        android:layout_toStartOf="@+id/input1"
+        android:layout_marginStart="41dp"
         android:text="Player 1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -122,27 +120,20 @@
 
     <TextView
         android:id="@+id/legnumber1"
-        android:layout_width="wrap_content"
+        android:layout_width="43dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/legsign1"
-        android:layout_alignEnd="@+id/playername1"
-        android:layout_alignRight="@+id/playername1"
-        android:layout_toEndOf="@+id/legsign1"
-        android:layout_toRightOf="@+id/legsign1"
+        android:layout_above="@+id/number1"
+        android:layout_alignEnd="@+id/number1"
         android:text="0"
         android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/legnumber2"
-        android:layout_width="wrap_content"
+        android:layout_width="43dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/legsign2"
-        android:layout_alignBottom="@+id/legsign2"
-        android:layout_alignEnd="@+id/playername2"
-        android:layout_alignRight="@+id/playername2"
-        android:layout_toEndOf="@+id/legsign2"
-        android:layout_toRightOf="@+id/legsign2"
+        android:layout_above="@+id/number1"
+        android:layout_alignEnd="@+id/number2"
         android:text="0"
         android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceLarge" />
