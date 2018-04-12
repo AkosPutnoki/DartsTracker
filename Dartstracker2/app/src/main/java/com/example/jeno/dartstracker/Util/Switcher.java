@@ -1,4 +1,4 @@
-package com.example.jeno.dartstracker;
+package com.example.jeno.dartstracker.Util;
 
 public class Switcher {
 

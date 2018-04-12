@@ -1,4 +1,4 @@
-package com.example.jeno.dartstracker;
+package com.example.jeno.dartstracker.Activites;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.jeno.dartstracker.Entity.Player;
+import com.example.jeno.dartstracker.R;
+import com.example.jeno.dartstracker.Entity.ScoreBoard;
+import com.example.jeno.dartstracker.Util.ScoreHandler;
+import com.example.jeno.dartstracker.Util.Switcher;
 
 public class MainActivity extends AppCompatActivity {
 

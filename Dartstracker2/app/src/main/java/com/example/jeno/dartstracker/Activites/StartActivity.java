@@ -1,4 +1,4 @@
-package com.example.jeno.dartstracker;
+package com.example.jeno.dartstracker.Activites;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.example.jeno.dartstracker.Activites.MainActivity;
+import com.example.jeno.dartstracker.R;
 
 public class StartActivity extends Activity {
 

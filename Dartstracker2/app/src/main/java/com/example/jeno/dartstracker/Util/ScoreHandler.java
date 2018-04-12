@@ -1,4 +1,6 @@
-package com.example.jeno.dartstracker;
+package com.example.jeno.dartstracker.Util;
+
+import com.example.jeno.dartstracker.Entity.Player;
 
 public class ScoreHandler {
 

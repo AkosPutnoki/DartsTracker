@@ -1,4 +1,4 @@
-package com.example.jeno.dartstracker;
+package com.example.jeno.dartstracker.Entity;
 
 import android.widget.TextView;
 
