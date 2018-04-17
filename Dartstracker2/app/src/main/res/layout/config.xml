@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/nameLabel1"
-        android:layout_alignParentLeft="true">
+        android:singleLine="false">
 
         <requestFocus />
     </EditText>
@@ -48,6 +48,8 @@
         android:layout_width="163dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite"
         android:text="new game" />
 
     <RadioGroup

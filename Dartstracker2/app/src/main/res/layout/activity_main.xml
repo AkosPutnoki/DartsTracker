@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
     tools:context="com.example.jeno.dartstracker.Activites.MainActivity">
 
     <TextView
@@ -48,10 +49,15 @@
     <Button
         android:id="@+id/submit1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/input1"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/submitButtonText" />
+        android:layout_marginTop="67dp"
+        android:background="@color/colorGreen"
+        android:text="@string/submitButtonText"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/scoreBoard1"
@@ -166,7 +172,10 @@
         android:layout_alignLeft="@+id/playername2"
         android:layout_alignStart="@+id/playername2"
         android:layout_alignTop="@+id/input1"
-        android:text="Undo" />
+        android:text="Undo"
+        android:textStyle="bold"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite" />
 
     <ToggleButton
         android:id="@+id/toToggle"
@@ -174,8 +183,11 @@
         android:layout_height="37dp"
         android:layout_alignEnd="@+id/number1"
         android:layout_alignTop="@+id/input1"
+        android:textColor="@color/colorWhite"
         android:textOff="score"
-        android:textOn="to score" />
+        android:textOn="to score"
+        android:textStyle="bold"
+        android:background="@color/colorGreen" />
 
 
 </RelativeLayout>
