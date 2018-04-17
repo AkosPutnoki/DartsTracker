@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.jeno.dartstracker.Entity.Player;
 import com.example.jeno.dartstracker.R;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         // grabbing the elements
         Button button1 = findViewById(R.id.submit1);
         Button undoButton = findViewById(R.id.undo);
+        ToggleButton toToggle = findViewById(R.id.toToggle);
         TextView scoreBoard1 = findViewById(R.id.scoreBoard1);
         TextView scoreBoard2 = findViewById(R.id.scoreBoard2);
         TextView number1 = findViewById(R.id.number1);
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         final ScoreBoard scoreBoardSecond = new ScoreBoard(scoreBoard2);
         final Player player1 = new Player(playerName1, number1, scoreBoardFirst, legCounter1);
         final Player player2 = new Player(playerName2, number2, scoreBoardSecond, legCounter2);
-        final Switcher switcher = new Switcher(true, true);
+        final Switcher switcher = new Switcher(true, true, false);
         final ScoreHandler scoreHandler = new ScoreHandler(player1, player2, switcher);
 
         // setting starting score
@@ -64,11 +67,14 @@ public class MainActivity extends AppCompatActivity {
                 EditText input1 = findViewById(R.id.input1);
                 try {
                     int input = Integer.parseInt(input1.getText().toString());
-                    scoreHandler.handle(input);
+                    if (switcher.isScoreSwitch()){
+                        scoreHandler.handleToScore(input);
+                    } else {
+                        scoreHandler.handle(input);
+                    }
                 } catch (NumberFormatException e){
                     System.out.println("wrong input");
                 }
-
                 input1.setText("");
             }
         });
@@ -78,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreHandler.undo();
+            }
+        });
+
+        toToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                switcher.setScoreSwitch(isChecked);
+                System.out.println("toggled");
             }
         });
 

@@ -4,10 +4,12 @@ public class Switcher {
 
     private boolean playerSwitch;
     private boolean legSwitch;
+    private boolean scoreSwitch;
 
-    public Switcher(boolean playerSwitch, boolean legSwitch) {
+    public Switcher(boolean playerSwitch, boolean legSwitch, boolean scoreSwitch) {
         this.playerSwitch = playerSwitch;
         this.legSwitch = legSwitch;
+        this.scoreSwitch = scoreSwitch;
     }
 
     public void playerSwitcher(){
@@ -29,4 +31,14 @@ public class Switcher {
     public boolean isLegSwitch() {
         return legSwitch;
     }
+
+    public boolean isScoreSwitch() {
+        return scoreSwitch;
+    }
+
+    public void setScoreSwitch(boolean scoreSwitch){
+        this.scoreSwitch = scoreSwitch;
+    }
+
+
 }

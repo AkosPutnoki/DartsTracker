@@ -33,16 +33,32 @@ public class ScoreHandler {
         }
     }
 
+    public void handleToScore(int input){
+        if (switcher.isPlayerSwitch()){
+            handlePlayerToScore(input, player1);
+        } else {
+            handlePlayerToScore(input, player2);
+        }
+    }
+
     private void handlePlayer(int inputScore, Player player){
         int result = player.getScore() - inputScore;
         if (result == 0){
-            resetScores();
-            player.getLegCounter().incrementCounter();
-            switcher.legSwitcher();
-            switcher.setPlayerSwitch(switcher.isLegSwitch());
+            gameWinHandler(player);
         } else if (result > 1 && inputScore <= maxScore ){
             player.setScore(String.valueOf(result));
             player.getScoreBoard().addToScores(inputScore);
+            switcher.playerSwitcher();
+        }
+        player.getScoreBoard().buildScoreBoard();
+    }
+
+    private void handlePlayerToScore(int input, Player player){
+        if (input == 0){
+            gameWinHandler(player);
+        } else if (input > 0 && input <= player.getScore()){
+            player.getScoreBoard().addToScores(player.getScore() - input);
+            player.setScore(String.valueOf(input));
             switcher.playerSwitcher();
         }
         player.getScoreBoard().buildScoreBoard();
@@ -53,9 +69,16 @@ public class ScoreHandler {
         if (success) switcher.playerSwitcher();
     }
 
-    public void resetScores(){
+    private void resetScores(){
         player1.reset(startingScore);
         player2.reset(startingScore);
+    }
+
+    private void gameWinHandler(Player player){
+        resetScores();
+        player.getLegCounter().incrementCounter();
+        switcher.legSwitcher();
+        switcher.setPlayerSwitch(switcher.isLegSwitch());
     }
 
     public void setStartingScore(int startingScore) {
