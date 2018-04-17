@@ -56,7 +56,7 @@ public class ScoreHandler {
     private void handlePlayerToScore(int input, Player player){
         if (input == 0){
             gameWinHandler(player);
-        } else if (input > 0 && input <= player.getScore()){
+        } else if ((input > player.getScore() - 181) && input <= player.getScore()){
             player.getScoreBoard().addToScores(player.getScore() - input);
             player.setScore(String.valueOf(input));
             switcher.playerSwitcher();
