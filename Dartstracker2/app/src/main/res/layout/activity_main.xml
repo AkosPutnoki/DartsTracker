@@ -61,24 +61,23 @@
 
     <TextView
         android:id="@+id/scoreBoard1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/scoreSign1"
-        android:layout_alignRight="@+id/scoreSign1"
-        android:layout_below="@+id/legsign1"
-        android:layout_marginTop="60dp"
-        android:textAlignment="textEnd"
+        android:layout_width="128dp"
+        android:layout_height="178dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="186dp"
+        android:layout_toStartOf="@+id/input1"
+        android:background="@drawable/input_style"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/scoreBoard2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/scoreBoard1"
-        android:layout_alignBottom="@+id/scoreBoard1"
-        android:layout_alignEnd="@+id/scoreSign2"
-        android:layout_alignRight="@+id/scoreSign2"
-        android:textAlignment="textEnd"
+        android:layout_width="128dp"
+        android:layout_height="178dp"
+        android:layout_alignTop="@+id/scoreBoard1"
+        android:layout_toEndOf="@+id/input1"
+        android:background="@drawable/input_style"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ScoreBoard {
 
-    private final int length = 5;
+    private final int length = 6;
     private TextView scoreBoard;
     private List<Integer> scores;
 
