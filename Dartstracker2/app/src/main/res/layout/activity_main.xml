@@ -64,8 +64,9 @@
         android:layout_width="128dp"
         android:layout_height="178dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="186dp"
-        android:layout_toStartOf="@+id/input1"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="119dp"
+        android:layout_marginStart="27dp"
         android:background="@drawable/input_style"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -74,8 +75,8 @@
         android:id="@+id/scoreBoard2"
         android:layout_width="128dp"
         android:layout_height="178dp"
+        android:layout_alignEnd="@+id/number2"
         android:layout_alignTop="@+id/scoreBoard1"
-        android:layout_toEndOf="@+id/input1"
         android:background="@drawable/input_style"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -180,13 +181,14 @@
         android:id="@+id/toToggle"
         android:layout_width="101dp"
         android:layout_height="37dp"
-        android:layout_alignEnd="@+id/number1"
+        android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/input1"
+        android:layout_marginStart="18dp"
+        android:background="@color/colorGreen"
         android:textColor="@color/colorWhite"
         android:textOff="score"
         android:textOn="to score"
-        android:textStyle="bold"
-        android:background="@color/colorGreen" />
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
